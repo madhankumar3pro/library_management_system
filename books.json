@@ -1,0 +1,14 @@
+[
+    {
+        "title": "bhanu pelli",
+        "author": "madhan",
+        "isbn": "143",
+        "books_available": 10
+    },
+    {
+        "title": "ramayanam",
+        "author": "valmiki",
+        "isbn": "8909",
+        "books_available": 6
+    }
+]
