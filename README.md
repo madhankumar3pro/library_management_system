@@ -5,7 +5,9 @@ provides functionality to add, update, delete, and search for books and users. A
 handles the check-in and check-out of books, late-fees, maintaining logs for these 
 transactions. The system ensures that only authorized managers can access and manipulate 
 the data. 
+
 late-fees of each book per day charge is 10 rupees. 
+
 Design Decisions: 
 1. Separation of Concerns: 
 o Classes and methods are organized based on functionality. Book Manager and 
