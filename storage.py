@@ -135,10 +135,18 @@ class Storage:
                 entry['status'] = 'Returned'
                 book = self.book_manager.search_books(entry['book_isbn'], by='isbn')
 
-                difference = entry['check_out_datetime'] - entry['check_in_datetime']
+                check_in_datetime = datetime.strptime(entry['check_in_datetime'], "%Y-%m-%d %H:%M:%S")
+                check_out_datetime = datetime.strptime(entry['check_out_datetime'], "%Y-%m-%d %H:%M:%S")
+
+                difference = check_out_datetime - check_in_datetime
+
                 days_difference = difference.days
+
+                print(days_difference)
+
                 if int(days_difference) >7:
                     fees_late = (days_difference-7) * 10
+                    entry['late_fees'] = fees_late
                 if book:
                     book = book[0]
                     self.update_book(book.isbn, books_available=int(book.books_available) + 1)
